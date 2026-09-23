@@ -1,7 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, Phone, X } from "lucide-react";
 import { Logo } from "./Logo";
+import { SITE_PHONE_DISPLAY, SITE_PHONE_TEL } from "@/lib/site";
 
 const links = [
   { to: "/", label: "Home" },
@@ -59,6 +60,12 @@ export function Nav() {
         </div>
 
         <div className="flex items-center gap-2 justify-self-end">
+          <a
+            href={`tel:${SITE_PHONE_TEL}`}
+            className="hidden items-center gap-1.5 rounded-full border border-ivory/20 px-4 py-2.5 text-sm font-semibold whitespace-nowrap text-ivory transition-colors hover:bg-ivory/10 lg:inline-flex"
+          >
+            <Phone className="h-4 w-4" /> {SITE_PHONE_DISPLAY}
+          </a>
           <Link
             to="/contact"
             className="hidden rounded-full bg-mint px-5 py-2.5 text-sm font-semibold whitespace-nowrap text-mint-foreground transition-transform hover:-translate-y-0.5 sm:inline-flex"
@@ -103,6 +110,12 @@ export function Nav() {
               >
                 Get Started
               </Link>
+              <a
+                href={`tel:${SITE_PHONE_TEL}`}
+                className="inline-flex items-center justify-center gap-2 rounded-2xl border border-ivory/25 px-4 py-3 text-center text-sm font-semibold text-ivory sm:col-span-2"
+              >
+                <Phone className="h-4 w-4" /> {SITE_PHONE_DISPLAY}
+              </a>
             </div>
           </div>
         </div>

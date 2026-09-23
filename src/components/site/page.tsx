@@ -1,6 +1,8 @@
 import { Link } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { Phone } from "lucide-react";
 import { Reveal } from "./motion";
+import { SITE_PHONE_DISPLAY, SITE_PHONE_TEL } from "@/lib/site";
 
 export function PageHero({
   eyebrow,
@@ -65,6 +67,12 @@ export function CtaStrip() {
             >
               Talk to an Expert
             </Link>
+            <a
+              href={`tel:${SITE_PHONE_TEL}`}
+              className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-card px-7 py-3.5 text-sm font-semibold text-primary transition-transform hover:-translate-y-0.5"
+            >
+              <Phone className="h-4 w-4" /> {SITE_PHONE_DISPLAY}
+            </a>
           </div>
         </div>
       </div>

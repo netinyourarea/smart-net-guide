@@ -24,6 +24,7 @@ import {
   Users,
   Briefcase,
   Signal,
+  Phone,
 } from "lucide-react";
 import { useState } from "react";
 
@@ -44,7 +45,7 @@ import mobile from "@/assets/mobile.jpg";
 
 import { Reveal, Counter } from "@/components/site/motion";
 import { CoverageFinder } from "@/components/site/CoverageFinder";
-import { pageHead, SITE_NAME, SITE_URL } from "@/lib/site";
+import { pageHead, SITE_NAME, SITE_URL, SITE_PHONE_DISPLAY, SITE_PHONE_TEL } from "@/lib/site";
 
 
 export const Route = createFileRoute("/")({
@@ -287,12 +288,20 @@ function Index() {
               entire connection request process.
             </p>
             <div className="mt-7 flex flex-col items-center gap-4 lg:items-start">
-              <Link
-                to="/coverage"
-                className="inline-flex items-center justify-center gap-2 rounded-full bg-mint px-7 py-3.5 text-sm font-semibold text-mint-foreground transition-transform hover:-translate-y-0.5"
-              >
-                Check Coverage <ArrowRight className="h-4 w-4" />
-              </Link>
+              <div className="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                <Link
+                  to="/coverage"
+                  className="inline-flex items-center justify-center gap-2 rounded-full bg-mint px-7 py-3.5 text-sm font-semibold text-mint-foreground transition-transform hover:-translate-y-0.5"
+                >
+                  Check Coverage <ArrowRight className="h-4 w-4" />
+                </Link>
+                <a
+                  href={`tel:${SITE_PHONE_TEL}`}
+                  className="inline-flex items-center justify-center gap-2 rounded-full border border-ivory/25 px-7 py-3.5 text-sm font-semibold text-ivory transition-colors hover:bg-ivory/10"
+                >
+                  <Phone className="h-4 w-4" /> {SITE_PHONE_DISPLAY}
+                </a>
+              </div>
               <Link
                 to="/contact"
                 className="text-sm font-semibold text-ivory/80 underline-offset-4 transition-colors hover:text-ivory hover:underline"
@@ -685,12 +694,20 @@ function Index() {
                   </span>
                   <h3 className="mt-6 font-display text-2xl font-semibold sm:text-3xl">{c.name}</h3>
                   <p className="mt-4 max-w-md text-sm leading-relaxed text-ivory/65">{c.copy}</p>
-                  <Link
-                    to="/coverage"
-                    className="mt-8 inline-flex items-center gap-2 rounded-full bg-mint px-6 py-3 text-sm font-semibold text-mint-foreground transition-transform hover:-translate-y-0.5"
-                  >
-                    Check Coverage <ArrowRight className="h-4 w-4" />
-                  </Link>
+                  <div className="mt-8 flex flex-wrap items-center gap-4">
+                    <Link
+                      to="/coverage"
+                      className="inline-flex items-center gap-2 rounded-full bg-mint px-6 py-3 text-sm font-semibold text-mint-foreground transition-transform hover:-translate-y-0.5"
+                    >
+                      Check Coverage <ArrowRight className="h-4 w-4" />
+                    </Link>
+                    <a
+                      href={`tel:${SITE_PHONE_TEL}`}
+                      className="inline-flex items-center gap-2 rounded-full border border-ivory/25 px-6 py-3 text-sm font-semibold text-ivory transition-colors hover:bg-ivory/10"
+                    >
+                      <Phone className="h-4 w-4" /> {SITE_PHONE_DISPLAY}
+                    </a>
+                  </div>
                 </div>
               ))}
             </div>
@@ -975,6 +992,12 @@ function Index() {
                   >
                     Talk to an Expert
                   </Link>
+                  <a
+                    href={`tel:${SITE_PHONE_TEL}`}
+                    className="inline-flex items-center gap-2 rounded-full border border-primary/25 bg-card px-8 py-4 text-sm font-semibold text-primary transition-transform hover:-translate-y-0.5"
+                  >
+                    <Phone className="h-4 w-4" /> {SITE_PHONE_DISPLAY}
+                  </a>
                 </div>
               </div>
             </Reveal>
