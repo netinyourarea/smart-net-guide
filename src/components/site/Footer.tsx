@@ -1,5 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { Logo } from "./Logo";
+import { SITE_PHONE_DISPLAY, SITE_PHONE_TEL } from "@/lib/site";
 
 export const INDEPENDENCE_NOTICE =
   "Smart Net Guide operates as an independent third-party service provider offering assistance with broadband and cable connection requests. We are not affiliated with, endorsed by, or representing any internet service provider, cable operator, or telecommunications company. All trademarks and brand names belong to their respective owners.";
@@ -54,6 +55,12 @@ export function Footer() {
               cable options available at their address, then handling the request from start to
               finish.
             </p>
+            <a
+              href={`tel:${SITE_PHONE_TEL}`}
+              className="mt-5 inline-block text-sm font-semibold text-mint transition-colors hover:text-gold"
+            >
+              {SITE_PHONE_DISPLAY}
+            </a>
           </div>
 
           {groups.map((g) => (

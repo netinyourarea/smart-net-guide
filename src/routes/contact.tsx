@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Clock, CheckCircle2 } from "lucide-react";
+import { Clock, CheckCircle2, Phone } from "lucide-react";
 import { PageHero } from "@/components/site/page";
 import { INDEPENDENCE_NOTICE } from "@/components/site/Footer";
-import { pageHead, breadcrumb, SITE_NAME } from "@/lib/site";
+import { pageHead, breadcrumb, SITE_NAME, SITE_PHONE_DISPLAY, SITE_PHONE_TEL } from "@/lib/site";
 
 export const Route = createFileRoute("/contact")({
   head: () => {
@@ -92,6 +92,12 @@ function ContactPage() {
                 <li className="flex items-start gap-3">
                   <Clock className="mt-0.5 h-4 w-4 shrink-0 text-primary" /> Mon–Sat, 8:00am –
                   8:00pm CT
+                </li>
+                <li className="flex items-start gap-3">
+                  <Phone className="mt-0.5 h-4 w-4 shrink-0 text-primary" />
+                  <a href={`tel:${SITE_PHONE_TEL}`} className="hover:text-primary">
+                    {SITE_PHONE_DISPLAY}
+                  </a>
                 </li>
               </ul>
             </div>
