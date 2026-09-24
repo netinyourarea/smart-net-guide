@@ -1,7 +1,7 @@
 export const SITE_NAME = "Smart Net Guide";
 export const SITE_URL = "https://smartnetguides.com";
-export const SITE_PHONE_DISPLAY = "(855) 950-633";
-export const SITE_PHONE_TEL = "+1-855-950-633";
+export const SITE_PHONE_DISPLAY = "(805) 248-9716";
+export const SITE_PHONE_TEL = "+18052489716";
 
 export function canonical(path: string) {
   return `${SITE_URL}${path}`;
